@@ -13,8 +13,8 @@ is already deployed using manifests or package distributions, as it includes Kub
 
 These are the minimal requirements to install Kubeflow Trainer control plane:
 
-- Kubernetes >= 1.28
-- `kubectl` >= 1.28
+- Kubernetes >= 1.31
+- `kubectl` >= 1.31
 
 {{% alert title="Tip" color="primary" %}}
 If you don't have Kubernetes cluster, you can quickly create one locally using [Kind](https://kind.sigs.k8s.io/docs/user/quick-start#installing-with-a-package-manager):
@@ -30,7 +30,7 @@ kind create cluster # or minikube start
 Run the following command to deploy a released version of Kubeflow Trainer controller manager:
 
 ```bash
-VERSION=v2.0.0
+export VERSION=v2.0.0
 kubectl apply --server-side -k "https://github.com/kubeflow/trainer.git/manifests/overlays/manager?ref=${VERSION}"
 ```
 
@@ -73,4 +73,5 @@ You can view the manifests directly on GitHub here:
 
 ## Next Steps
 
-- How to [migrate from Kubeflow Training Operator V1](/docs/components/trainer/operator-guides/migration).
+- How to [migrate from Kubeflow Training Operator v1](/docs/components/trainer/operator-guides/migration).
+- Explore [the Kubeflow Trainer Runtime guide](/docs/components/trainer/operator-guides/runtime).
